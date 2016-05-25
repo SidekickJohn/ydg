@@ -1,0 +1,5 @@
+//Nach dem dem Konfigurator
+
+SELECT superfoods.ID
+FROM wp_configarticle
+WHERE SF = "Maca, Gaurana" AND GRAMM = "80, 120"

@@ -1,0 +1,352 @@
+/*
+Theme Name: Your Daily Green Modern
+Theme URI: http://www.yourdailygreen.de
+Description: Das Moderne Theme von yourdailygreen.de
+Author: Jan Burmeister
+Author URI: http://multiply-it.de
+Version: 1.0
+License:
+License URI:
+*/
+@import url('bootstrap/css/bootstrap.css');
+@import url('css/customdrink.css');
+@import url('css/landing-page.css');
+@import url('css/rotating-card.css');
+@import url('css/pe-icon-7-stroke.css');
+/*     Fonts and icons     */
+@import url('css/font-awesome.min.css');
+@import url('css/opensans.css');
+
+
+@media screen {
+
+.mainLogo{
+  width: 400px;
+}
+/*.page-setup{
+  background-color:#DBDBDB;
+}*/
+.page-top{
+  margin-top: 60px;
+}
+
+
+.fixed-footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 !important;
+}
+
+.styledText{
+  font-family: "Helvetica Neue","Open Sans",Arial,sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 28px;
+}
+}
+/*----------------Header--------------------------------*/
+.awesomeBody{
+  background: #5eb4c5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #5eb4c5 , #f0b952); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #5eb4c5 , #f0b952); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: url("http://localhost/yourdailygreen/wp-content/uploads/2016/05/background04-1.png");
+  background-repeat: repeat;
+}
+
+.social-left-fixed{
+  position: fixed;;
+  top: 100px;
+  left: 0;
+  right: 100%;
+}
+
+.social-left-fixed li{
+  float: none;
+}
+
+.social-left-fixed li a{
+  color: darkgreen !important;
+  opacity: 1 !important;
+}
+.social-left-fixed li a:hover{
+  color: lightgreen !important;
+}
+
+.front-page-product{
+  width: 100% !important;
+}
+
+.landing-page .section-testimonial .carousel-inner .item .carousel-testimonial-caption {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+a {
+  color: #FFFFFF;
+}
+a:hover, a:focus {
+  color: lightgreen;
+  text-decoration: none;
+  background-color: transparent !important;
+}
+/*--------------- Cart ---------------------------------*/
+#coupon_code{
+  width:auto;
+}
+
+/*------------- Product Page ---------------*/
+.page-top-product{
+  margin-top: 100px;
+}
+
+.images img{
+  max-width: 100%;
+  height: auto;
+}
+
+.quantity{
+  float: left;
+  margin-right: 1.618em;
+  border-right: 4px double #e8e4e3;
+  padding-right: 1.618em;
+}
+
+.quantity input{
+  width: 50px;
+  text-align: center;
+  padding: .236em .5em;
+  border: 1px solid #c4c0bf;
+  -webkit-border-radius: 0.125em;
+  border-radius: 0.125em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  margin: 0 .327em;
+  background: #f7f7f7;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 0 0 0.327em rgba(0, 0, 0, 0.03), inset 0 1px 2px #d8d4d3, 0 1px #fff;
+  box-shadow: 0 0 0 0.327em rgba(0, 0, 0, 0.03), inset 0 1px 2px #d8d4d3, 0 1px #fff;
+}
+
+.single_add_to_cart_button{
+  background-color: #777777;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#777777), to(#444444));
+  background-image: -webkit-linear-gradient(top, #777777, #444444);
+  background-image: -moz-linear-gradient(top, #777777, #444444);
+  background-image: -ms-linear-gradient(top, #777777, #444444);
+  background-image: -o-linear-gradient(top, #777777, #444444);
+  background-image: linear-gradient(to bottom, #777777, #444444);
+  text-shadow: 0 1px 0 #333333;
+  border: 1px solid #222222;
+  -webkit-box-shadow: 0 0 0 0.327em rgba(0, 0, 0, 0.075), 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 1px #999999, inset 0 -1px #333333;
+  box-shadow: 0 0 0 0.327em rgba(0, 0, 0, 0.075), 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 1px #999999, inset 0 -1px #333333;
+  padding: .236em .857em;
+  color: white;
+  cursor: pointer;
+  overflow: visible;
+  width: auto;
+  line-height: 1.618em;
+  margin: 0 .327em;
+  font-weight: bold;
+  -webkit-border-radius: 0.202em;
+  border-radius: 0.202em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+.woocommerce-tabs ul.tabs li a{
+  border-bottom: 0;
+  background: rgba(232, 228, 227, 0.5);
+  color: #6c6360;
+}
+
+
+.woocommerce-tabs ul.tabs li a:hover{
+  color: lightgreen;
+}
+
+.woocommerce-tabs ul.tabs li.active a{
+  background: #fff;
+  box-shadow: 0 1px 2px 0 #e8e4e3;
+  -webkit-box-shadow: 0 1px 2px 0 #e8e4e3;
+  color: #ff4800;
+  border-top-color: #ff4800;
+}
+
+/*---------------- Checkout ----------------------------*/
+/*-- AGB Häckchen --*/
+  #legal{
+    position: relative;
+  }
+
+/*--------------  Erstelle deinen Mix ------------------*/
+.panel{
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+.configHead{
+  color: green;
+}
+
+.customdrinkCenter{
+  background: transparent;
+  margin-top: 0 !important;
+}
+
+#description-carousel{
+    background-color: #FFFFFF;
+    opacity: 0.9;
+    border-radius: 10px;
+}
+
+.carousel-background{
+  background-color: #EFFBEF;
+}
+
+.carousel-heightSetup{
+  height: 600px;
+}
+
+.slideHandlePos a{
+  margin-top: 0 !important;
+}
+
+.categoryCards{
+  margin: 0 !important;
+  padding: 0;
+  padding: 0 10px;
+  background-color: transparent;
+}
+
+.submitWell{
+  border-radius: 10px;
+  height: 55px;
+}
+
+#submitMix{
+  margin-top: 40px;
+}
+
+/*--------------  Superfoods ------------------*/
+
+.spinCard{
+  font-size: 20px;
+}
+
+.card .footer{
+  padding-top: 50px;
+  border: none;
+  background-color: transparent;
+}
+
+.sfLinks{
+  color: #3ABE41;
+}
+
+.superfoodThumbnail img{
+  max-width: 100%;
+  height: auto;
+}
+
+.superfoodSidenav{
+  position: fixed;
+  right: 10px;
+  top: 3px;
+}
+
+
+.superfoodSidenav h2{
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+
+.superfoodSidenav .btn{
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  font-size: 20px;
+}
+
+.superfoodSidenav .btn:hover{
+  border-color: lightgreen;
+  color: lightgreen;
+}
+
+.superfoodSidenav .btn span{
+  padding-right: 10px;
+}
+/*--------- Fundgrube ------------------------*/
+.widget-area{
+  padding-top: 20px;
+}
+
+.site-content img{
+  height: auto;
+  max-width: 100%;
+}
+
+.site-content .page-back{
+  background-color: #FFFFFF;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.site-content a{
+  color: green;
+}
+
+.site-content .page-top a{
+  color: #ffffff;
+}
+
+#blogCategories{
+  list-style: none;
+  padding-left: 10px;
+}
+
+#blogCategories li{
+  padding-top: 20px;
+}
+
+#blogCategories li i{
+  padding-right: 10px;
+  color: green;
+}
+
+#recent{
+  list-style: none;
+  padding-left: 10px;
+}
+
+#recent li{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid green;
+}
+
+.btn.btn-primary.read-more {
+  float: right;
+  border: 1px solid #DDD;
+  color: green;
+  background-color: transparent;
+}
+.btn.btn-primary.read-more:hover {
+	color: lightgreen;
+  background-color: #54397E;
+}
+
+/*--------------Team Seite --------------*/
+.teamBackground{
+  background-color: #FFFFFF;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  padding-left: 10px;
+}
