@@ -84,6 +84,46 @@ function dbCommunication(){
   global $finalIngNames;
   global $finalIngAmm;
   global $sessID;
+
+  // FinalIngAmm in Einzelvariablen packen
+  $macaAmm = $finalIngAmm[0];
+  $amlaAmm = $finalIngAmm[1];
+  $guaranaAmm = $finalIngAmm[2];
+  $brahmiAmm = $finalIngAmm[3];
+  $lucumaAmm = $finalIngAmm[4];
+  $baobabAmm = $finalIngAmm[5];
+  $spirulinaAmm = $finalIngAmm[6];
+  $aroniaAmm = $finalIngAmm[7];
+  $moringaAmm = $finalIngAmm[8];
+  $gerstengrasAmm = $finalIngAmm[9];
+
+  $checkSum = calculateCheckSum($macaAmm, $amlaAmm, $guaranaAmm, $brahmiAmm, $lucumaAmm, $baobabAmm, $spirulinaAmm, $aroniaAmm, $moringaAmm, $gerstengrasAmm);
+
+  // Call DB and check for Checksum in mix-product-table
+    // If checksum exists check if ammounts match
+      // If ammounts match
+        //get product-id
+        //actualize DateTime
+      // else create new product
+        // wp insert post (post type product) with superfoods in comment-field?!
+        // remember product-id
+        // insert mix into DB with product-id + DateTime
+    // Else create new product
+        // wp insert post (post type product)
+        // remember product-id
+        // insert mix into DB with product-id + Datetime
+    // open product with set id from posts
+    // call cleanup-task
+
+  // cleanup-task if number of products in DB is equal to 500
+    // then check for datetime + 3 days
+      // if found
+        // get product-ids
+        // delete products with resembling ids
+
+
+
+
   // SQL Queries absetzen
   /*mysqli_query($db, "INSERT INTO wp_handlemix (text) VALUES('$json')");
   $query = "";
@@ -91,7 +131,7 @@ function dbCommunication(){
 */
 };
 
-// Map gender to ingredient- Array[0]
+// Map gender to ingredient- Array[0] - Maca - Amla
 function mapGender($uGenderVal, $uAgeVal){
   global $ingredients;
   if($uGenderVal == "option1"){
@@ -99,9 +139,17 @@ function mapGender($uGenderVal, $uAgeVal){
       "name" => "Maca",
       "ammount" => 3
     ];
+    $ingredients[] = [
+      "name" => "Amla",
+      "ammount" => 0
+    ];
     // age check for males
     mapAge($uAgeVal);
   }else{
+    $ingredients[] = [
+      "name" => "Maca",
+      "ammount" => 0
+    ];
     $ingredients[] = [
       "name" => "Amla",
       "ammount" => 3
@@ -117,7 +165,7 @@ function mapAge($userAgeVal){
   }
 }
 
-// Map tiredness to ingredient- Array[1]
+// Map tiredness to ingredient- Array[1] - Guarana
 function mapTired($uTiredVal1, $uTiredVal2, $uTiredVal3){
   global $ingredients;
   if($uTiredVal1 == "3"){
@@ -277,11 +325,11 @@ function mapWLoss($uWLossVal){
 function mapLife1($uLife1Val){
   global $ingredients;
   if($uLife1Val == "3"){
-    $ingredients[2]["ammount"] = $ingredients[2]["ammount"] + 0.5;
+    $ingredients[3]["ammount"] = $ingredients[3]["ammount"] + 0.5;
   }else if($uLife1Val == "4"){
-      $ingredients[2]["ammount"] = $ingredients[2]["ammount"] + 0.75;
+      $ingredients[3]["ammount"] = $ingredients[3]["ammount"] + 0.75;
   }else if($uLife1Val == "5"){
-      $ingredients[2]["ammount"] = $ingredients[2]["ammount"] + 1;
+      $ingredients[3]["ammount"] = $ingredients[3]["ammount"] + 1;
   }
 }
 
@@ -328,9 +376,9 @@ function addFill($bar, $bao, $aro, $brah){
     "name" => "Gerstengras",
     "ammount" => $bar
   ];
-  $ingredients[4]["ammount"] = $ingredients[4]["ammount"] + $bao;
-  $ingredients[6]["ammount"] = $ingredients[6]["ammount"] + $aro;
-  $ingredients[2]["ammount"] = $ingredients[2]["ammount"] + $brah;
+  $ingredients[5]["ammount"] = $ingredients[5]["ammount"] + $bao;
+  $ingredients[7]["ammount"] = $ingredients[7]["ammount"] + $aro;
+  $ingredients[3]["ammount"] = $ingredients[3]["ammount"] + $brah;
 }
 
 // 20gr - sum of ingredients --> Filler in grams
@@ -373,6 +421,11 @@ function finalize(){
    HttpObject.send(null);*/
 }
 
+// Calculate mix checkSum
+function calculateCheckSum($ma, $am, $gu, $br, $lu, $ba, $sp, $ar, $mo, $ge){
+  $calCheckSum = ($ma*2)+($am*4)+($gu*8)+($br*16)+($lu*32)+($ba*64)+($sp*128)+($ar*256)+($mo*512)+($ge*1024);
+  return $calCheckSum;
+}
 
 // per Argument in 'a' entscheiden welche Funktion aufgerufen werden soll
 switch ($_POST['a'])
