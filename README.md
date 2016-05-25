@@ -1,1 +1,1 @@
-your-daily-green-modern
+ydg-modern
